@@ -1,40 +1,21 @@
-<?php
-$digimons = [
-    [
-        'id' => 1,
-        'nome' => 'Agumon',
-        'nivel' => 'Criança',
-        'tipo' => 'Réptil',
-        'atributo' => 'Vacina',
-        'descricao' => 'Um dinossauro pequeno e corajoso',
-        'imagem' => 'agumon.jpg'
-    ],
-    [
-        'id' => 2,
-        'nome' => 'Gabumon',
-        'nivel' => 'Criança',
-        'tipo' => 'Besta',
-        'atributo' => 'Data',
-        'descricao' => 'Mesmo usando a pele de sua mãe Garurumon ainda é um digimon do tipo réptil',
-        'imagem' => 'gabumon.jpg'
-    ]
-    ];
+<?php 
 
-    function buscarDigimonPorId($id, $digimons){
-        foreach($digimons as $digimon){
-            if ($digimon['id'] == $id){
-                return $digimon;
-            }
-        }
-        return null;
-    }
+function getDigimons(){
+    $url = "https://digi-api.com/api/v1/digimon";
+    $response = file_get_contents($url);
+    return json_decode($response, true)['content'];
+}
+function getDigimonsPorId($id){
+    $url = "https://digi-api.com/api/v1/digimon/$id";
+    $response = file_get_contents($url);
+    return json_decode($response, true);
+}
 
-    function filtrarDigimons($digimons, $categoria, $valor){
-        return array_filter($digimons,function($digimon) use ($categoria, $valor){
-            return strtolower($digimon[$categoria] == strtolower($valor));
-        });
-    }
-
+function filtrarDigimonPorLevel($level){
+    $url = "https://digi-api.com/api/v1/digimon?level=$level";
+    $response = file_get_contents($url);
+    return json_decode($response,true)['content'];
+}
 
 
 ?>
