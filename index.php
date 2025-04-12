@@ -2,7 +2,8 @@
     include 'includes/funcoes.php' ;
     include 'includes/cabecalho.php' ;
     $digimons = getDigimons();
-    ?>
+?>
+
 
     <h1 class="texte-center my-4">Enciclópedia Digimon</h1>
     <div class="row">
