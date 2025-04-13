@@ -99,10 +99,6 @@ unset($_SESSION['mensagem']);
                 <div class="card-body">
                     <p><strong>Usuário:</strong> <?= htmlspecialchars($_SESSION['usuario'] ?? 'Admin') ?></p>
                     <p><strong>Último acesso:</strong> <?= date('d/m/Y H:i:s') ?></p>
-                    <hr>
-                    <a href="alterar-senha.php" class="btn btn-outline-primary">
-                        <i class="bi bi-key"></i> Alterar Senha
-                    </a>
                 </div>
             </div>
         </div>
