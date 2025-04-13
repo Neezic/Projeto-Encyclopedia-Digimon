@@ -12,8 +12,6 @@
                     <h4>Links</h4>
                     <ul style="list-style: none; padding: 0;">
                         <li><a href="index.php" style="color: white; text-decoration: none;">Início</a></li>
-                        <li><a href="filtrar.php" style="color: white; text-decoration: none;">Filtrar</a></li>
-                        <li><a href="sobre.php" style="color: white; text-decoration: none;">Sobre</a></li>
                     </ul>
                 </div>
                 

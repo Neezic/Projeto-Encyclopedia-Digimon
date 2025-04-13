@@ -17,6 +17,25 @@ if (empty($digimon) || isset($digimon['error'])) {
     header("Location: index.php");
     exit;
 }
+
+$digimon = null;
+foreach ($_SESSION['digimons_adicionados'] ?? [] as $digimonAdicionado) {
+    if ($digimonAdicionado['id'] === $id) {
+        $digimon = $digimonAdicionado;
+        break;
+    }
+}
+
+// Se não encontrou nos adicionados, busca na API
+if (!$digimon) {
+    require_once 'includes/api.php';
+    $digimon = getDigimonsPorId($id);
+}
+
+if (!$digimon) {
+    header('Location: index.php');
+    exit;
+}
 ?>
 
 <div class="container my-5">

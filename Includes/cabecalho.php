@@ -71,14 +71,12 @@ session_start();
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="assets/img/digivice.png" alt="DigiDex">
-                    <h1>DigiDex</h1>
+                    <img src="assets/img/Icone Digimon.png" alt="DigiDex">
+                    <h1>A Enciclopédia dos Monstros Digitais</h1>
                 </div>
                 
                 <div class="nav-links">
                     <a href="index.php" class="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '' ?>">Início</a>
-                    <a href="filtrar.php" class="<?= basename($_SERVER['PHP_SELF']) == 'filtrar.php' ? 'active' : '' ?>">Filtrar</a>
-                    <a href="sobre.php" class="<?= basename($_SERVER['PHP_SELF']) == 'sobre.php' ? 'active' : '' ?>">Sobre</a>
                     
                     <?php if(isset($_SESSION['logado'])): ?>
                         <a href="protegido.php" class="<?= basename($_SERVER['PHP_SELF']) == 'protegido.php' ? 'active' : '' ?>">Admin</a>
